@@ -1,17 +1,19 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>DevOps Engineer Dipak  | Cloud & Automation</title>
+    <title>NEXORA — Technology & Innovation</title>
 
     <style>
 
-        /* =========================
-           GLOBAL
-        ========================= */
+        /* ==============================
+           RESET
+        ============================== */
 
         * {
             margin: 0;
@@ -25,8 +27,8 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #07111f;
-            color: #e8eef7;
+            background: #f7f8fc;
+            color: #111827;
             line-height: 1.6;
         }
 
@@ -37,264 +39,319 @@
 
         .container {
             width: 90%;
-            max-width: 1150px;
+            max-width: 1180px;
             margin: auto;
         }
 
 
-        /* =========================
+        /* ==============================
            NAVBAR
-        ========================= */
+        ============================== */
 
         header {
             position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
             z-index: 1000;
 
-            background: rgba(7, 17, 31, 0.92);
-            backdrop-filter: blur(12px);
+            background: rgba(247, 248, 252, 0.90);
+            backdrop-filter: blur(15px);
 
-            border-bottom: 1px solid #1d2d42;
+            border-bottom: 1px solid #e5e7eb;
         }
 
         nav {
-            height: 75px;
+            height: 76px;
 
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
             font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-weight: 800;
+            letter-spacing: -1px;
         }
 
         .logo span {
-            color: #38bdf8;
+            color: #635bff;
         }
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 30px;
             list-style: none;
         }
 
         .nav-links a {
-            color: #aebdce;
-            font-size: 15px;
+            color: #596273;
+            font-size: 14px;
+            font-weight: 600;
 
-            transition: 0.3s;
+            transition: 0.25s;
         }
 
         .nav-links a:hover {
-            color: #38bdf8;
+            color: #635bff;
         }
 
-        .nav-button {
+        .nav-cta {
             padding: 10px 18px;
 
-            border: 1px solid #38bdf8;
-            border-radius: 6px;
+            background: #111827;
+            color: white !important;
 
-            color: #38bdf8 !important;
+            border-radius: 7px;
         }
 
-        .nav-button:hover {
-            background: #38bdf8;
-            color: #06111d !important;
+        .nav-cta:hover {
+            background: #635bff;
         }
 
 
-        /* =========================
+        /* ==============================
            HERO
-        ========================= */
+        ============================== */
 
         .hero {
             min-height: 100vh;
 
+            padding-top: 76px;
+
             display: flex;
             align-items: center;
 
-            padding-top: 75px;
+            position: relative;
+            overflow: hidden;
+        }
 
-            background:
-                radial-gradient(
-                    circle at 15% 20%,
-                    rgba(14, 165, 233, 0.14),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 85% 75%,
-                    rgba(37, 99, 235, 0.12),
-                    transparent 30%
-                );
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            background: #dcd8ff;
+
+            border-radius: 50%;
+
+            filter: blur(100px);
+
+            top: 10%;
+            right: -150px;
+
+            opacity: 0.55;
         }
 
         .hero-content {
-            max-width: 850px;
+            max-width: 800px;
+
+            position: relative;
+            z-index: 2;
         }
 
-        .small-title {
-            color: #38bdf8;
+        .badge {
+            display: inline-block;
 
-            font-size: 14px;
-            font-weight: bold;
+            padding: 8px 14px;
 
-            letter-spacing: 4px;
+            background: white;
 
-            margin-bottom: 22px;
+            border: 1px solid #e5e7eb;
+
+            border-radius: 30px;
+
+            color: #635bff;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            margin-bottom: 25px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
         }
 
         .hero h1 {
-            font-size: clamp(45px, 7vw, 78px);
+            font-size: clamp(48px, 7vw, 82px);
 
-            line-height: 1.05;
+            line-height: 1.02;
 
-            margin-bottom: 28px;
+            letter-spacing: -4px;
+
+            margin-bottom: 25px;
         }
 
-        .hero h1 span {
-            color: #38bdf8;
+        .gradient-text {
+            background: linear-gradient(
+                90deg,
+                #635bff,
+                #a855f7,
+                #ec4899
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .hero-text {
-            max-width: 680px;
+        .hero-description {
+            max-width: 650px;
 
-            color: #91a4b8;
+            font-size: 19px;
 
-            font-size: 18px;
+            color: #667085;
 
             margin-bottom: 35px;
         }
 
-        .buttons {
+        .hero-buttons {
             display: flex;
-            gap: 15px;
+            gap: 14px;
+
             flex-wrap: wrap;
         }
 
-        .primary-btn {
-            padding: 14px 25px;
+        .btn-primary {
+            padding: 14px 24px;
 
-            background: #38bdf8;
-            color: #06111d;
+            background: #111827;
 
-            font-weight: bold;
+            color: white;
 
-            border-radius: 6px;
+            border-radius: 8px;
 
-            transition: 0.3s;
+            font-weight: 700;
+
+            transition: 0.25s;
         }
 
-        .primary-btn:hover {
+        .btn-primary:hover {
             transform: translateY(-3px);
-            background: #7dd3fc;
+            background: #635bff;
         }
 
-        .secondary-btn {
-            padding: 14px 25px;
+        .btn-secondary {
+            padding: 14px 24px;
 
-            border: 1px solid #33485f;
-            color: #d5dfeb;
+            border: 1px solid #d7dbe3;
 
-            border-radius: 6px;
+            background: white;
 
-            transition: 0.3s;
+            border-radius: 8px;
+
+            font-weight: 700;
+
+            transition: 0.25s;
         }
 
-        .secondary-btn:hover {
-            border-color: #38bdf8;
-            color: #38bdf8;
-        }
-
-
-        /* =========================
-           STATS
-        ========================= */
-
-        .stats {
-            border-top: 1px solid #1c2c40;
-            border-bottom: 1px solid #1c2c40;
-
-            padding: 35px 0;
-        }
-
-        .stats-grid {
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-
-            gap: 20px;
-        }
-
-        .stat {
-            text-align: center;
-
-            border-right: 1px solid #1c2c40;
-        }
-
-        .stat:last-child {
-            border-right: none;
-        }
-
-        .stat h3 {
-            font-size: 30px;
-            color: #38bdf8;
-        }
-
-        .stat p {
-            color: #8295a9;
-            font-size: 14px;
+        .btn-secondary:hover {
+            border-color: #635bff;
+            color: #635bff;
         }
 
 
-        /* =========================
-           COMMON SECTION
-        ========================= */
+        /* ==============================
+           TRUST BAR
+        ============================== */
+
+        .trust {
+            padding: 30px 0;
+
+            border-top: 1px solid #e5e7eb;
+            border-bottom: 1px solid #e5e7eb;
+
+            background: white;
+        }
+
+        .trust-content {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 30px;
+
+            flex-wrap: wrap;
+        }
+
+        .trust p {
+            color: #9aa3b2;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+        .trust-items {
+            display: flex;
+            gap: 40px;
+
+            flex-wrap: wrap;
+        }
+
+        .trust-items span {
+            font-size: 17px;
+
+            font-weight: 800;
+
+            color: #a1a8b3;
+        }
+
+
+        /* ==============================
+           SECTIONS
+        ============================== */
 
         section {
             padding: 110px 0;
         }
 
-        .section-heading {
-            max-width: 650px;
+        .section-title {
+            max-width: 700px;
+
             margin-bottom: 55px;
         }
 
-        .section-label {
-            color: #38bdf8;
+        .section-title small {
+            color: #635bff;
 
-            font-size: 13px;
-            font-weight: bold;
+            font-weight: 800;
 
-            letter-spacing: 3px;
+            letter-spacing: 2px;
 
-            margin-bottom: 12px;
+            text-transform: uppercase;
         }
 
-        .section-heading h2 {
-            font-size: 42px;
-            margin-bottom: 15px;
+        .section-title h2 {
+            font-size: 45px;
+
+            letter-spacing: -2px;
+
+            margin: 10px 0 15px;
         }
 
-        .section-heading p {
-            color: #8295a9;
+        .section-title p {
+            color: #667085;
+
+            font-size: 17px;
         }
 
 
-        /* =========================
-           SERVICES
-        ========================= */
+        /* ==============================
+           FEATURES
+        ============================== */
 
-        .services {
-            background: #091523;
+        .features {
+            background: white;
         }
 
-        .service-grid {
+        .feature-grid {
             display: grid;
 
             grid-template-columns: repeat(3, 1fr);
@@ -302,48 +359,154 @@
             gap: 22px;
         }
 
-        .service {
-            padding: 32px;
+        .feature {
+            padding: 35px;
 
-            background: #0d1b2b;
+            border: 1px solid #e7e9ee;
 
-            border: 1px solid #1d3046;
+            border-radius: 14px;
 
-            border-radius: 10px;
+            background: #fff;
 
             transition: 0.3s;
         }
 
-        .service:hover {
-            transform: translateY(-7px);
+        .feature:hover {
+            transform: translateY(-8px);
 
-            border-color: #38bdf8;
+            box-shadow:
+                0 20px 50px rgba(17,24,39,0.08);
+
+            border-color: #c9c5ff;
         }
 
-        .service-number {
-            font-size: 14px;
+        .feature-icon {
+            width: 50px;
+            height: 50px;
 
-            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eeecff;
+
+            color: #635bff;
+
+            border-radius: 10px;
+
+            font-size: 22px;
 
             margin-bottom: 22px;
         }
 
-        .service h3 {
+        .feature h3 {
             font-size: 21px;
-            margin-bottom: 12px;
+
+            margin-bottom: 10px;
         }
 
-        .service p {
-            color: #8295a9;
+        .feature p {
+            color: #667085;
+
             font-size: 15px;
         }
 
 
-        /* =========================
-           SKILLS
-        ========================= */
+        /* ==============================
+           STATS
+        ============================== */
 
-        .skills-layout {
+        .stats {
+            background: #111827;
+
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 30px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 42px;
+
+            letter-spacing: -2px;
+
+            color: #c4b5fd;
+        }
+
+        .stat p {
+            color: #9ca3af;
+
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           WORKFLOW
+        ============================== */
+
+        .workflow {
+            background: #f7f8fc;
+        }
+
+        .workflow-grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .step {
+            position: relative;
+
+            padding: 30px;
+
+            background: white;
+
+            border-radius: 12px;
+
+            border: 1px solid #e5e7eb;
+        }
+
+        .step-number {
+            color: #635bff;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            margin-bottom: 18px;
+        }
+
+        .step h3 {
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: #667085;
+
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           TECH STACK
+        ============================== */
+
+        .stack {
+            background: white;
+        }
+
+        .stack-layout {
             display: grid;
 
             grid-template-columns: 1fr 1fr;
@@ -353,187 +516,218 @@
             align-items: center;
         }
 
-        .skills-text h2 {
-            font-size: 42px;
-            margin-bottom: 20px;
+        .stack-text h2 {
+            font-size: 44px;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 18px;
         }
 
-        .skills-text p {
-            color: #8295a9;
+        .stack-text p {
+            color: #667085;
+
             margin-bottom: 25px;
         }
 
-        .skill-list {
-            display: grid;
+        .tags {
+            display: flex;
 
-            grid-template-columns: 1fr 1fr;
+            gap: 10px;
 
-            gap: 12px;
+            flex-wrap: wrap;
         }
 
-        .skill {
-            padding: 15px;
+        .tag {
+            padding: 10px 15px;
 
-            background: #0d1b2b;
+            background: #f4f4f7;
 
-            border: 1px solid #1d3046;
+            border: 1px solid #e2e4e9;
 
             border-radius: 6px;
 
-            color: #c8d5e3;
+            font-size: 14px;
+
+            font-weight: 700;
         }
 
-        .skill::before {
+        .terminal {
+            background: #111827;
+
+            color: #d1d5db;
+
+            border-radius: 14px;
+
+            padding: 25px;
+
+            box-shadow:
+                0 25px 60px rgba(17,24,39,0.18);
+        }
+
+        .terminal-top {
+            display: flex;
+
+            gap: 7px;
+
+            margin-bottom: 25px;
+        }
+
+        .terminal-dot {
+            width: 10px;
+            height: 10px;
+
+            border-radius: 50%;
+
+            background: #4b5563;
+        }
+
+        .terminal-line {
+            margin: 9px 0;
+
+            font-family: monospace;
+
+            font-size: 14px;
+        }
+
+        .terminal-green {
+            color: #34d399;
+        }
+
+        .terminal-purple {
+            color: #a78bfa;
+        }
+
+        .terminal-blue {
+            color: #60a5fa;
+        }
+
+
+        /* ==============================
+           PRICING STYLE CARDS
+        ============================== */
+
+        .plans {
+            background: #f7f8fc;
+        }
+
+        .plan-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+        .plan {
+            background: white;
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 14px;
+
+            padding: 35px;
+        }
+
+        .plan.featured {
+            border: 2px solid #635bff;
+
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 20px 50px rgba(99,91,255,0.12);
+        }
+
+        .plan-label {
+            color: #635bff;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 18px;
+        }
+
+        .plan h3 {
+            font-size: 25px;
+
+            margin-bottom: 10px;
+        }
+
+        .plan p {
+            color: #667085;
+
+            font-size: 14px;
+
+            margin-bottom: 25px;
+        }
+
+        .plan ul {
+            list-style: none;
+        }
+
+        .plan li {
+            padding: 9px 0;
+
+            border-bottom: 1px solid #eef0f3;
+
+            font-size: 14px;
+        }
+
+        .plan li::before {
             content: "✓";
 
-            color: #38bdf8;
+            color: #635bff;
+
+            font-weight: bold;
 
             margin-right: 10px;
         }
 
 
-        /* =========================
-           PROJECT
-        ========================= */
+        /* ==============================
+           CTA
+        ============================== */
 
-        .project-section {
-            background: #091523;
-        }
+        .cta {
+            padding: 110px 0;
 
-        .project {
-            display: grid;
+            background: #111827;
 
-            grid-template-columns: 1.2fr 1fr;
+            color: white;
 
-            gap: 40px;
-
-            padding: 45px;
-
-            background: #0d1b2b;
-
-            border: 1px solid #1d3046;
-
-            border-radius: 12px;
-        }
-
-        .project h3 {
-            font-size: 30px;
-
-            margin-bottom: 15px;
-        }
-
-        .project p {
-            color: #8295a9;
-
-            margin-bottom: 25px;
-        }
-
-        .project-info {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 15px;
-        }
-
-        .project-item {
-            padding: 18px;
-
-            background: #091523;
-
-            border-radius: 7px;
-        }
-
-        .project-item small {
-            display: block;
-
-            color: #6f8297;
-
-            margin-bottom: 5px;
-        }
-
-        .project-item strong {
-            color: #dce6f0;
-        }
-
-
-        /* =========================
-           ABOUT
-        ========================= */
-
-        .about-layout {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 70px;
-        }
-
-        .about h2 {
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
-
-        .about p {
-            color: #8295a9;
-            margin-bottom: 18px;
-        }
-
-        .about-box {
-            padding: 35px;
-
-            border-left: 3px solid #38bdf8;
-
-            background: #0d1b2b;
-        }
-
-        .about-box h3 {
-            margin-bottom: 15px;
-        }
-
-        .about-box p {
-            margin: 0;
-        }
-
-
-        /* =========================
-           CONTACT
-        ========================= */
-
-        .contact {
             text-align: center;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(14, 165, 233, 0.10),
-                    transparent 50%
-                );
         }
 
-        .contact h2 {
-            font-size: 48px;
+        .cta h2 {
+            font-size: 52px;
+
+            letter-spacing: -2px;
+
             margin-bottom: 15px;
         }
 
-        .contact p {
-            color: #8295a9;
-            margin-bottom: 30px;
+        .cta p {
+            color: #9ca3af;
+
+            max-width: 600px;
+
+            margin: auto auto 30px;
         }
 
 
-        /* =========================
+        /* ==============================
            FOOTER
-        ========================= */
+        ============================== */
 
         footer {
-            padding: 28px 0;
+            background: #0b111c;
 
-            border-top: 1px solid #1d2d42;
+            color: #9ca3af;
 
-            color: #65788d;
-
-            font-size: 14px;
+            padding: 30px 0;
         }
 
         .footer-content {
@@ -544,82 +738,94 @@
             align-items: center;
         }
 
+        .footer-logo {
+            color: white;
 
-        /* =========================
+            font-size: 20px;
+
+            font-weight: 800;
+        }
+
+        .footer-logo span {
+            color: #8b5cf6;
+        }
+
+
+        /* ==============================
            RESPONSIVE
-        ========================= */
+        ============================== */
 
-        @media (max-width: 850px) {
+        @media (max-width: 900px) {
 
             .nav-links {
                 display: none;
+            }
+
+            .feature-grid,
+            .plan-grid {
+                grid-template-columns: 1fr;
             }
 
             .stats-grid {
                 grid-template-columns: 1fr 1fr;
             }
 
-            .stat {
-                border-right: none;
+            .workflow-grid {
+                grid-template-columns: 1fr 1fr;
             }
 
-            .service-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-layout {
+            .stack-layout {
                 grid-template-columns: 1fr;
             }
 
             .project {
-                grid-template-columns: 1fr;
-            }
-
-            .about-layout {
                 grid-template-columns: 1fr;
             }
 
         }
 
-        @media (max-width: 550px) {
+
+        @media (max-width: 600px) {
 
             .hero h1 {
-                font-size: 43px;
+                font-size: 48px;
+
+                letter-spacing: -2px;
             }
 
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skill-list {
-                grid-template-columns: 1fr;
-            }
-
-            .project {
-                padding: 25px;
-            }
-
-            .contact h2 {
+            .section-title h2,
+            .stack-text h2 {
                 font-size: 35px;
+            }
+
+            .stats-grid,
+            .workflow-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta h2 {
+                font-size: 38px;
             }
 
             .footer-content {
                 flex-direction: column;
-                gap: 10px;
+
+                gap: 12px;
             }
 
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
-    <!-- =========================
+    <!-- ==============================
          NAVBAR
-    ========================= -->
+    ============================== -->
 
     <header>
 
@@ -628,34 +834,30 @@
             <nav>
 
                 <a href="#home" class="logo">
-                    DevOps<span>.</span>
+                    NEXORA<span>.</span>
                 </a>
 
                 <ul class="nav-links">
 
                     <li>
-                        <a href="#home">Home</a>
+                        <a href="#features">Features</a>
                     </li>
 
                     <li>
-                        <a href="#services">Services</a>
+                        <a href="#workflow">Process</a>
                     </li>
 
                     <li>
-                        <a href="#skills">Skills</a>
+                        <a href="#technology">Technology</a>
                     </li>
 
                     <li>
-                        <a href="#projects">Projects</a>
+                        <a href="#plans">Solutions</a>
                     </li>
 
                     <li>
-                        <a href="#about">About</a>
-                    </li>
-
-                    <li>
-                        <a href="#contact" class="nav-button">
-                            Contact
+                        <a href="#contact" class="nav-cta">
+                            Get Started
                         </a>
                     </li>
 
@@ -668,105 +870,46 @@
     </header>
 
 
-    <!-- =========================
+    <!-- ==============================
          HERO
-    ========================= -->
+    ============================== -->
 
-    <main id="home">
+    <section id="home" class="hero">
 
-        <section class="hero">
+        <div class="container">
 
-            <div class="container">
+            <div class="hero-content">
 
-                <div class="hero-content">
-
-                    <div class="small-title">
-                        DEVOPS • CLOUD • AUTOMATION
-                    </div>
-
-                    <h1>
-                        Build.
-                        <span>Deploy.</span>
-                        Scale.
-                    </h1>
-
-                    <p class="hero-text">
-
-                        Welcome to my technology space. I'm learning
-                        DevOps, cloud infrastructure and automation
-                        while building practical projects that solve
-                        real-world problems.
-
-                    </p>
-
-                    <div class="buttons">
-
-                        <a href="#projects" class="primary-btn">
-                            View My Work
-                        </a>
-
-                        <a href="#about" class="secondary-btn">
-                            About Me
-                        </a>
-
-                    </div>
-
+                <div class="badge">
+                    ✦ BUILDING THE NEXT GENERATION OF SOFTWARE
                 </div>
 
-            </div>
+                <h1>
 
-        </section>
+                    Technology that
+                    <span class="gradient-text">
+                        moves you forward.
+                    </span>
 
+                </h1>
 
-        <!-- =========================
-             STATS
-        ========================= -->
+                <p class="hero-description">
 
-        <div class="stats">
+                    We design reliable systems, automate complex
+                    workflows and help teams move from idea to
+                    production with confidence.
 
-            <div class="container">
+                </p>
 
-                <div class="stats-grid">
+                <div class="hero-buttons">
 
-                    <div class="stat">
+                    <a href="#features" class="btn-primary">
+                        Explore Platform →
+                    </a>
 
-                        <h3>06+</h3>
-
-                        <p>
-                            Technologies
-                        </p>
-
-                    </div>
-
-                    <div class="stat">
-
-                        <h3>24/7</h3>
-
-                        <p>
-                            Learning Mindset
-                        </p>
-
-                    </div>
-
-                    <div class="stat">
-
-                        <h3>100%</h3>
-
-                        <p>
-                            Hands-on Practice
-                        </p>
-
-                    </div>
-
-                    <div class="stat">
-
-                        <h3>∞</h3>
-
-                        <p>
-                            Possibilities
-                        </p>
-
-                    </div>
+                    <a href="#technology" class="btn-secondary">
+                        View Technology
+                    </a>
 
                 </div>
 
@@ -774,393 +917,631 @@
 
         </div>
 
-
-        <!-- =========================
-             SERVICES
-        ========================= -->
-
-        <section id="services" class="services">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div class="section-label">
-                        WHAT I WORK WITH
-                    </div>
-
-                    <h2>
-                        DevOps & Cloud
-                    </h2>
-
-                    <p>
-                        Technologies and practices I'm exploring
-                        to understand modern software delivery.
-                    </p>
-
-                </div>
+    </section>
 
 
-                <div class="service-grid">
+    <!-- ==============================
+         TRUST
+    ============================== -->
 
+    <div class="trust">
 
-                    <div class="service">
+        <div class="container">
 
-                        <div class="service-number">
-                            01
-                        </div>
+            <div class="trust-content">
 
-                        <h3>
-                            Continuous Integration
-                        </h3>
+                <p>
+                    Built around modern technology
+                </p>
 
-                        <p>
-                            Automating builds and testing with
-                            CI pipelines to make software delivery
-                            faster and more reliable.
-                        </p>
+                <div class="trust-items">
 
-                    </div>
-
-
-                    <div class="service">
-
-                        <div class="service-number">
-                            02
-                        </div>
-
-                        <h3>
-                            Continuous Deployment
-                        </h3>
-
-                        <p>
-                            Deploying applications automatically
-                            to servers and environments using
-                            modern deployment workflows.
-                        </p>
-
-                    </div>
-
-
-                    <div class="service">
-
-                        <div class="service-number">
-                            03
-                        </div>
-
-                        <h3>
-                            Infrastructure
-                        </h3>
-
-                        <p>
-                            Working with Linux servers, networking,
-                            containers and cloud infrastructure.
-                        </p>
-
-                    </div>
-
+                    <span>LINUX</span>
+                    <span>DOCKER</span>
+                    <span>JENKINS</span>
+                    <span>CLOUD</span>
+                    <span>KUBERNETES</span>
 
                 </div>
 
             </div>
 
-        </section>
+        </div>
 
+    </div>
 
-        <!-- =========================
-             SKILLS
-        ========================= -->
 
-        <section id="skills">
+    <!-- ==============================
+         FEATURES
+    ============================== -->
 
-            <div class="container">
+    <section id="features" class="features">
 
-                <div class="skills-layout">
+        <div class="container">
 
+            <div class="section-title">
 
-                    <div class="skills-text">
-
-                        <div class="section-label">
-                            TECHNOLOGY STACK
-                        </div>
-
-                        <h2>
-                            Tools I'm Learning
-                        </h2>
-
-                        <p>
-                            My current learning journey focuses on
-                            understanding the complete path from
-                            source code to production deployment.
-                        </p>
-
-                        <a href="#projects" class="primary-btn">
-                            See My Project
-                        </a>
-
-                    </div>
-
-
-                    <div class="skill-list">
-
-                        <div class="skill">
-                            Linux
-                        </div>
-
-                        <div class="skill">
-                            Git
-                        </div>
-
-                        <div class="skill">
-                            Jenkins
-                        </div>
-
-                        <div class="skill">
-                            Docker
-                        </div>
-
-                        <div class="skill">
-                            Kubernetes
-                        </div>
-
-                        <div class="skill">
-                            Ansible
-                        </div>
-
-                        <div class="skill">
-                            AWS / Cloud
-                        </div>
-
-                        <div class="skill">
-                            Bash
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             PROJECT
-        ========================= -->
-
-        <section id="projects" class="project-section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div class="section-label">
-                        FEATURED PROJECT
-                    </div>
-
-                    <h2>
-                        Application Deployment
-                    </h2>
-
-                    <p>
-                        A simple project demonstrating application
-                        deployment on a Linux server.
-                    </p>
-
-                </div>
-
-
-                <div class="project">
-
-
-                    <div>
-
-                        <h3>
-                            Tomcat Web Deployment
-                        </h3>
-
-                        <p>
-
-                            This website is running on Apache Tomcat
-                            inside a Linux environment. The project
-                            demonstrates how a web application can be
-                            deployed and served from a production-style
-                            server.
-
-                        </p>
-
-                        <a href="#contact" class="primary-btn">
-                            Project Details
-                        </a>
-
-                    </div>
-
-
-                    <div class="project-info">
-
-                        <div class="project-item">
-
-                            <small>
-                                SERVER
-                            </small>
-
-                            <strong>
-                                Linux
-                            </strong>
-
-                        </div>
-
-
-                        <div class="project-item">
-
-                            <small>
-                                WEB SERVER
-                            </small>
-
-                            <strong>
-                                Apache Tomcat
-                            </strong>
-
-                        </div>
-
-
-                        <div class="project-item">
-
-                            <small>
-                                FRONTEND
-                            </small>
-
-                            <strong>
-                                HTML + CSS
-                            </strong>
-
-                        </div>
-
-
-                        <div class="project-item">
-
-                            <small>
-                                NEXT STEP
-                            </small>
-
-                            <strong>
-                                Jenkins CI/CD
-                            </strong>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             ABOUT
-        ========================= -->
-
-        <section id="about">
-
-            <div class="container">
-
-                <div class="about-layout">
-
-
-                    <div class="about">
-
-                        <div class="section-label">
-                            ABOUT
-                        </div>
-
-                        <h2>
-                            Always Learning.
-                        </h2>
-
-                        <p>
-
-                            Technology changes quickly, and that's
-                            exactly what makes it interesting.
-
-                        </p>
-
-                        <p>
-
-                            My focus is on developing practical
-                            knowledge rather than simply memorizing
-                            commands. Every project is an opportunity
-                            to understand how systems actually work.
-
-                        </p>
-
-                    </div>
-
-
-                    <div class="about-box">
-
-                        <h3>
-                            My Approach
-                        </h3>
-
-                        <p>
-
-                            Learn the concept → build it →
-                            break it → troubleshoot it →
-                            automate it.
-
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             CONTACT
-        ========================= -->
-
-        <section id="contact" class="contact">
-
-            <div class="container">
-
-                <div class="section-label">
-                    GET IN TOUCH
-                </div>
+                <small>
+                    WHAT WE DO
+                </small>
 
                 <h2>
-                    Let's Build Something.
+                    Everything you need to build better.
                 </h2>
 
                 <p>
-                    Interested in technology, automation and
-                    building things that actually work?
+                    A modern approach to software infrastructure,
+                    automation and continuous delivery.
                 </p>
-
-                <a
-                    href="mailto:admin@example.com"
-                    class="primary-btn"
-                >
-                    Contact Me
-                </a>
 
             </div>
 
-        </section>
 
-    </main>
+            <div class="feature-grid">
 
 
-    <!-- =========================
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        Automation
+                    </h3>
+
+                    <p>
+                        Replace repetitive manual processes with
+                        reliable automated workflows.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ◈
+                    </div>
+
+                    <h3>
+                        Scalability
+                    </h3>
+
+                    <p>
+                        Design infrastructure that can grow as
+                        applications and teams grow.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ✓
+                    </div>
+
+                    <h3>
+                        Reliability
+                    </h3>
+
+                    <p>
+                        Build repeatable deployments and systems
+                        that are easier to monitor and maintain.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         STATS
+    ============================== -->
+
+    <section class="stats">
+
+        <div class="container">
+
+            <div class="stats-grid">
+
+                <div class="stat">
+
+                    <h3>99.9%</h3>
+
+                    <p>
+                        Target Availability
+                    </p>
+
+                </div>
+
+                <div class="stat">
+
+                    <h3>10x</h3>
+
+                    <p>
+                        Faster Automation
+                    </p>
+
+                </div>
+
+                <div class="stat">
+
+                    <h3>24/7</h3>
+
+                    <p>
+                        Infrastructure
+                    </p>
+
+                </div>
+
+                <div class="stat">
+
+                    <h3>∞</h3>
+
+                    <p>
+                        Possibilities
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         WORKFLOW
+    ============================== -->
+
+    <section id="workflow" class="workflow">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <small>
+                    OUR PROCESS
+                </small>
+
+                <h2>
+                    From code to production.
+                </h2>
+
+                <p>
+                    A simple workflow for delivering software
+                    efficiently.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-grid">
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        01 / PLAN
+                    </div>
+
+                    <h3>
+                        Plan
+                    </h3>
+
+                    <p>
+                        Understand requirements and design the
+                        architecture.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        02 / BUILD
+                    </div>
+
+                    <h3>
+                        Build
+                    </h3>
+
+                    <p>
+                        Develop the application and manage source
+                        code with Git.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        03 / AUTOMATE
+                    </div>
+
+                    <h3>
+                        Automate
+                    </h3>
+
+                    <p>
+                        Create CI/CD pipelines that test and
+                        package applications.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        04 / DEPLOY
+                    </div>
+
+                    <h3>
+                        Deploy
+                    </h3>
+
+                    <p>
+                        Release applications to production and
+                        monitor the environment.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         TECHNOLOGY
+    ============================== -->
+
+    <section id="technology" class="stack">
+
+        <div class="container">
+
+            <div class="stack-layout">
+
+
+                <div class="stack-text">
+
+                    <small style="
+                        color:#635bff;
+                        font-weight:800;
+                        letter-spacing:2px;
+                    ">
+                        TECHNOLOGY STACK
+                    </small>
+
+                    <h2>
+                        Built with tools that developers trust.
+                    </h2>
+
+                    <p>
+
+                        Explore the technologies behind modern
+                        application delivery and infrastructure
+                        automation.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            Linux
+                        </span>
+
+                        <span class="tag">
+                            Git
+                        </span>
+
+                        <span class="tag">
+                            Jenkins
+                        </span>
+
+                        <span class="tag">
+                            Docker
+                        </span>
+
+                        <span class="tag">
+                            Kubernetes
+                        </span>
+
+                        <span class="tag">
+                            Ansible
+                        </span>
+
+                        <span class="tag">
+                            AWS
+                        </span>
+
+                        <span class="tag">
+                            Bash
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="terminal">
+
+                    <div class="terminal-top">
+
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+
+                    </div>
+
+
+                    <div class="terminal-line">
+
+                        <span class="terminal-purple">
+                            $
+                        </span>
+
+                        git push origin main
+
+                    </div>
+
+
+                    <div class="terminal-line terminal-green">
+
+                        ✓ Code pushed successfully
+
+                    </div>
+
+
+                    <div class="terminal-line">
+
+                        <span class="terminal-purple">
+                            $
+                        </span>
+
+                        docker build -t application .
+
+                    </div>
+
+
+                    <div class="terminal-line terminal-green">
+
+                        ✓ Docker image created
+
+                    </div>
+
+
+                    <div class="terminal-line">
+
+                        <span class="terminal-purple">
+                            $
+                        </span>
+
+                        kubectl apply -f deployment.yml
+
+                    </div>
+
+
+                    <div class="terminal-line terminal-blue">
+
+                        deployment.apps/application configured
+
+                    </div>
+
+
+                    <div class="terminal-line terminal-green">
+
+                        ✓ Deployment successful
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         SOLUTIONS
+    ============================== -->
+
+    <section id="plans" class="plans">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <small>
+                    SOLUTIONS
+                </small>
+
+                <h2>
+                    Choose your path.
+                </h2>
+
+                <p>
+                    Different approaches for different stages
+                    of your technology journey.
+                </p>
+
+            </div>
+
+
+            <div class="plan-grid">
+
+
+                <div class="plan">
+
+                    <div class="plan-label">
+                        START
+                    </div>
+
+                    <h3>
+                        Foundation
+                    </h3>
+
+                    <p>
+                        Build the fundamentals required for
+                        modern infrastructure.
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Linux fundamentals
+                        </li>
+
+                        <li>
+                            Git & GitHub
+                        </li>
+
+                        <li>
+                            Bash scripting
+                        </li>
+
+                        <li>
+                            Server administration
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="plan featured">
+
+                    <div class="plan-label">
+                        MOST POPULAR
+                    </div>
+
+                    <h3>
+                        Automation
+                    </h3>
+
+                    <p>
+                        Connect development and operations
+                        through automation.
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Jenkins CI/CD
+                        </li>
+
+                        <li>
+                            Docker
+                        </li>
+
+                        <li>
+                            Ansible
+                        </li>
+
+                        <li>
+                            Automated deployments
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="plan">
+
+                    <div class="plan-label">
+                        ADVANCED
+                    </div>
+
+                    <h3>
+                        Scale
+                    </h3>
+
+                    <p>
+                        Manage distributed applications and
+                        cloud infrastructure.
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Kubernetes
+                        </li>
+
+                        <li>
+                            Cloud infrastructure
+                        </li>
+
+                        <li>
+                            Monitoring
+                        </li>
+
+                        <li>
+                            Production systems
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         CTA
+    ============================== -->
+
+    <section id="contact" class="cta">
+
+        <div class="container">
+
+            <h2>
+                Ready to build?
+            </h2>
+
+            <p>
+                Start with an idea. Turn it into code.
+                Automate it. Deploy it. Keep improving.
+            </p>
+
+            <a href="mailto:admin@example.com"
+               class="btn-primary">
+
+                Let's Connect →
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
          FOOTER
-    ========================= -->
+    ============================== -->
 
     <footer>
 
@@ -1168,12 +1549,12 @@
 
             <div class="footer-content">
 
-                <div>
-                    © 2026 DevOps. All rights reserved.
+                <div class="footer-logo">
+                    NEXORA<span>.</span>
                 </div>
 
                 <div>
-                    Built with HTML & CSS
+                    © 2026 Nexora. Built with HTML & CSS.
                 </div>
 
             </div>
@@ -1186,3 +1567,5 @@
 </body>
 
 </html>
+```
+
