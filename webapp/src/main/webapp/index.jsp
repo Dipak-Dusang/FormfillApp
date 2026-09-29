@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NEXORA — Technology & Innovation</title>
+    <title>NEXORA — dipak dusang & Innovation</title>
 
     <style>
 
