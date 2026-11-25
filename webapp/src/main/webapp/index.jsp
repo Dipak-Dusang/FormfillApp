@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My first boss!</title>
-<title>My second  boss!</title>
+<title>My secondboss!</title>
+<title>My third final bos!</title>
 
 <style>
 *{
