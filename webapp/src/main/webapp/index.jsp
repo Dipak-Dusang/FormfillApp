@@ -27,6 +27,7 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    i
 }
 
 .logo{
@@ -202,6 +203,7 @@ footer{
 
     <form onsubmit="submitForm(event)">
         <input type="text" id="name" placeholder="Your Name" required>
+	<input type="text" id="wife's name" placeholder="wife's name" required>
         <input type="email" id="email" placeholder="Your Email" required>
         <textarea id="message" rows="5" placeholder="Your Message"></textarea>
         <button type="submit">Send Message</button>
